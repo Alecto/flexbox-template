@@ -11,6 +11,33 @@
 
 	<!-- header.header -->
 	<header class="header">
+		<!-- .header-logo>img.header-logo__image+strong.header-logo__title+span.header-logo__description -->
+		<div class="header-logo">
+			<img class="header-logo__image" src="img/logo.png" alt="">
+			<strong class="header-logo__title">
+				STRONG TEMPLATE
+			</strong>
+			<span class="header-logo__description">
+				Тестовый сайт для первого модуля, курса HTML/CSS
+			</span>
+		</div>
+		<!-- nav.header-menu -->
+		<nav class="header-menu">
+			<!-- .header-menu__btn>.header-menu__btn-row*3 -->
+			<div class="header-menu__btn">
+				<div class="header-menu__btn-row"></div>
+				<div class="header-menu__btn-row"></div>
+				<div class="header-menu__btn-row"></div>
+			</div>
+			<!-- ul.header-menu__list>li.header-menu__list-item*5>a -->
+			<ul class="header-menu__list">
+				<li class="header-menu__list-item header-menu__list-item--active"><a href="#">Главная</a></li>
+				<li class="header-menu__list-item"><a href="#">Страница</a></li>
+				<li class="header-menu__list-item"><a href="#">Запись</a></li>
+				<li class="header-menu__list-item"><a href="#">Контакты</a></li>
+				<li class="header-menu__list-item"><a href="#">О нас</a></li>
+			</ul>
+		</nav>
 	</header>
 
 	<!-- .container.body-section -->
@@ -32,6 +59,7 @@
 	<footer class="footer">
 	</footer>
 
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 
 </body>
