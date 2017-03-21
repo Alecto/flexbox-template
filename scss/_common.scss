@@ -1,0 +1,39 @@
+
+a {
+  color: #eeeeee;
+  text-decoration: none;
+
+  &:hover {
+    color: $main-color;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $global-width;
+  width: 100%;
+  background-color: #d8b036;
+  background-image: url("../img/global-bg.jpg");
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  font-size: 14px;    
+  font-family: 'RobotoRegular', Arial, sans-serif;
+  line-height: 1.5em;
+  opacity: 1;
+  transition: opacity 1s ease 0s;
+}
+
+p {
+  color: #cccccc;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.container {
+  display: flex;
+}

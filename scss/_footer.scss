@@ -1,0 +1,41 @@
+
+.footer {
+  margin: 10px 0 20px;
+
+  h3 {
+    @include block-header;
+  }
+
+  &-top {
+    display: flex;
+  }
+
+  &-bottom {
+    box-sizing: border-box;
+    margin: 20px 0 0 0;
+    padding: 10px 15px;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #eeeeee;
+    text-align: center;
+
+    h3 {
+      margin: 0 auto;
+      max-width: 300px;
+    }
+  }
+
+  &-widget {
+    box-sizing: border-box;
+    margin: 0 20px 0 0;
+    padding: 10px 15px;
+    width: 25%;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #eeeeee;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
