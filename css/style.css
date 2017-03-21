@@ -1,0 +1,46 @@
+
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+  background-color: #d8b036;
+  background-image: url("../img/global-bg.jpg");
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 1s ease 0s; }
+
+.clearfix {
+  clear: both; }
+
+.container {
+  display: flex; }
+
+.header {
+  min-height: 100px;
+  background: blue; }
+
+.main {
+  order: 2;
+  min-height: 100px;
+  width: calc(100% - 490px);
+  background: red; }
+
+.left-sidebar {
+  order: 1;
+  box-sizing: border-box;
+  width: 250px;
+  background: green; }
+
+.right-sidebar {
+  order: 3;
+  box-sizing: border-box;
+  width: 240px;
+  background: orange; }
+
+.footer {
+  min-height: 100px;
+  background: pink; }
