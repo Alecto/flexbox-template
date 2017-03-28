@@ -455,7 +455,7 @@ p {
     width: 50%; } }
 
 @media only screen and (max-width: 768px) {
-  .header-menu ul {
+  .header-menu__list {
     display: none;
     width: 100%; }
   .header-menu li {
@@ -477,9 +477,6 @@ p {
     width: 100%; }
   .right-sidebar {
     padding-left: 0;
-    width: 100%; }
-  .footer .footer-top {
-    margin: 0 0 20px 0;
     width: 100%; } }
 
 @media only screen and (max-width: 640px) {
