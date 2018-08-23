@@ -1,37 +1,8 @@
 
 .header {
   min-height: 100px;
+  margin-bottom: 30px;
+
   border-radius: 0 0 7px 7px;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
-
-.header-logo {
-  &__image {
-    display: block;
-    margin: 0 auto;
-    padding: 25px 10px;
-    max-width: 400px;
-    width: calc(100% - 50px);
-  }
-
-  &__title {
-    display: block;
-    padding: 15px 10px 10px;
-    color: #eeeeee;
-    text-align: center;
-    letter-spacing: 3px;
-    font-size: 28px;
-    line-height: 1.5em;
-  }
-
-  &__description {
-    display: block;
-    padding: 5px 10px 25px;
-    color: #eeeeee;
-    text-align: center;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 14px;
-  }
-}
-

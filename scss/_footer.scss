@@ -1,6 +1,6 @@
 
 .footer {
-  margin: 10px 0 20px;
+  margin-bottom: $gutter;
 
   h3 {
     @include block-header;
@@ -8,34 +8,39 @@
 
   &-top {
     display: flex;
-  }
 
-  &-bottom {
-    box-sizing: border-box;
-    margin: 20px 0 0 0;
-    padding: 10px 15px;
-    border-radius: 7px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #eeeeee;
-    text-align: center;
+    margin-right: -($gutter / 4);
+    margin-left: -($gutter / 4);
 
-    h3 {
-      margin: 0 auto;
-      max-width: 300px;
+    @media (max-width: $middle) {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      padding: 0 $gutter / 4;
+
+      color: #eeeeee;
+
+      @media (min-width: $middle + 1) {
+        flex: 0 0 25%;
+      }
+
+      @media (max-width: $middle) and (min-width: $xsmall + 1) {
+        flex: 0 0 50%;
+      }
+
+      @media (max-width: $xsmall) {
+        width: 100%;
+      }
     }
   }
 
-  &-widget {
-    box-sizing: border-box;
-    margin: 0 20px 0 0;
-    padding: 10px 15px;
-    width: 25%;
-    border-radius: 7px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #eeeeee;
+  &-bottom {
+    text-align: center;
 
-    &:last-child {
-      margin-right: 0;
+    h3 {
+      max-width: 300px;
+      margin: 0 auto;
     }
   }
 }

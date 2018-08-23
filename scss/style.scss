@@ -1,11 +1,12 @@
 
 @import "_variables";
-@import "_fonts";
 @import "_mixins.scss";
 @import "_common";
 @import "_header";
+@import "_header-logo";
 @import "_header-menu";
 @import "_main";
-@import "_sidebar";
+@import "_left-sidebar";
+@import "_right-sidebar";
+@import "_widgets";
 @import "_footer";
-@import "_media";

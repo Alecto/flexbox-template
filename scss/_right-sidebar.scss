@@ -1,0 +1,25 @@
+
+.right-sidebar {
+  margin-bottom: $gutter / 2;
+
+  order: 3;
+
+  @media (min-width: $large + 1) {
+    flex: 0 0 $right-sidebar-width;
+    .widget-news {
+      width: $right-sidebar-width;
+    }
+  }
+
+  @media (max-width: $large) and (min-width: $middle + 1) {
+    width: 100%;
+  }
+
+  @media (max-width: $middle) and (min-width: $xsmall + 1) {
+    width: 50%;
+  }
+
+  @media (max-width: $xsmall) {
+    width: 100%;
+  }
+}

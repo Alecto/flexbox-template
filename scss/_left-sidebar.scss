@@ -1,0 +1,24 @@
+
+.left-sidebar {
+  margin-bottom: $gutter / 2;
+
+  @media (min-width: $middle + 1) {
+    flex: 0 0 $left-sidebar-width;
+
+    order: 1;
+  }
+
+  @media (max-width: $middle) and (min-width: $xsmall + 1) {
+    width: 50%;
+    padding-right: $gutter;
+
+    order: 2;
+  }
+
+  @media (max-width: $xsmall) {
+    width: 100%;
+    margin-bottom: 0;
+
+    order: 2;
+  }
+}
