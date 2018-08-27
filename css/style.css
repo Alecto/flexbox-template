@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -340,12 +342,7 @@ p {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.left-sidebar {
-  margin-bottom: 15px;
-}
-
 .right-sidebar {
-  margin-bottom: 15px;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
@@ -424,10 +421,12 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin: 0 -15px 15px;
+  /* компенсация padding для фонового ховера */
   padding-right: 15px;
+  /* для фонового ховера от краев блока */
   padding-left: 15px;
+  /* для фонового ховера от краев блока */
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -465,7 +464,6 @@ p {
 
 .widget-news__item-excerpt {
   width: calc(100% - 75px);
-  margin-bottom: 15px;
   padding-left: 10px;
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
@@ -473,10 +471,7 @@ p {
   color: #cccccc;
   display: -webkit-box;
   overflow: hidden;
-  height: 75px;
   max-height: 75px;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
   font-size: 13px;
   line-height: 19px;
   -webkit-box-orient: vertical;
@@ -578,6 +573,7 @@ p {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 220px;
             flex: 0 0 220px;
+    margin-bottom: 15px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -607,6 +603,7 @@ p {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 240px;
             flex: 0 0 240px;
+    margin-bottom: 15px;
   }
 
   .right-sidebar .widget-news {
@@ -740,7 +737,7 @@ p {
 @media (max-width: 992px) and (min-width: 577px) {
   .left-sidebar {
     width: 50%;
-    padding-right: 30px;
+    padding-right: 7.5px;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -748,6 +745,7 @@ p {
 
   .right-sidebar {
     width: 50%;
+    padding-left: 7.5px;
   }
 
   .footer-top__item {

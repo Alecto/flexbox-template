@@ -73,10 +73,9 @@
     &-wrapper {
       display: flex;
 
-      margin-right: -$gutter / 2;
-      margin-left: -$gutter / 2;
-      padding-right: $gutter / 2;
-      padding-left: $gutter / 2;
+      margin: 0 (-$gutter / 2) ($gutter / 2); /* компенсация padding для фонового ховера */
+      padding-right: $gutter / 2; /* для фонового ховера от краев блока */
+      padding-left: $gutter / 2;  /* для фонового ховера от краев блока */
 
       flex-wrap: wrap;
     }
@@ -109,7 +108,6 @@
 
     &-excerpt {
       width: calc(100% - 75px);
-      margin-bottom: $gutter / 2;
       padding-left: 10px;
 
       transition: color 0.5s;

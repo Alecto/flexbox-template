@@ -1,16 +1,16 @@
 
 .left-sidebar {
-  margin-bottom: $gutter / 2;
-
   @media (min-width: $middle + 1) {
     flex: 0 0 $left-sidebar-width;
+
+    margin-bottom: $gutter / 2;
 
     order: 1;
   }
 
   @media (max-width: $middle) and (min-width: $xsmall + 1) {
     width: 50%;
-    padding-right: $gutter;
+    padding-right: $gutter / 4;
 
     order: 2;
   }
