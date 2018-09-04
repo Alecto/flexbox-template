@@ -29,8 +29,8 @@
     }
 
     &.active {
-      display: table !important;
-      clear: both;
+      display: block;
+      flex-direction: column;
     }
 
     &-item {
