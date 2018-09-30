@@ -1,14 +1,14 @@
 
-@import "../libs/normalize/normalize";
+@import "../libs/normalize/_normalize";
+@import "variables";
+@import "mixins.scss";
 
-@import "_variables";
-@import "_mixins.scss";
-@import "_common";
-@import "_header";
-@import "_header-logo";
-@import "_header-menu";
-@import "_main";
-@import "_left-sidebar";
-@import "_right-sidebar";
-@import "_widgets";
-@import "_footer";
+@import "common";
+@import "header";
+@import "header-logo";
+@import "header-menu";
+@import "main";
+@import "left-sidebar";
+@import "right-sidebar";
+@import "widgets";
+@import "footer";
