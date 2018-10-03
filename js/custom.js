@@ -1,5 +1,0 @@
-(function ($) {  
-
-/* code there */
-
-})(jQuery);
