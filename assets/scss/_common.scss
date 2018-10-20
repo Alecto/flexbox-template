@@ -39,7 +39,8 @@ a {
 
   color: #eeeeee;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $main-color;
   }
 }

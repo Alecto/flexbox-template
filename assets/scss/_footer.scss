@@ -2,10 +2,6 @@
 .footer {
   margin-bottom: $gutter;
 
-  h3 {
-    @include block-header;
-  }
-
   &-top {
     display: flex;
 
