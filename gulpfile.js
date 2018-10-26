@@ -1,83 +1,158 @@
 'use strict';
- 
-var gulp             = require('gulp');
-var sass             = require('gulp-sass');
-var autoprefixer     = require('gulp-autoprefixer');
-var gcmq             = require('gulp-group-css-media-queries');
-var sourcemaps       = require('gulp-sourcemaps');
-var notify           = require('gulp-notify');
-var browserSync      = require('browser-sync');
-var smartgrid        = require('smart-grid');
-var csscomb          = require('gulp-csscomb');
-var gcmq             = require('gulp-group-css-media-queries');
-var runSequence      = require('run-sequence');
-var changed          = require('gulp-changed');
 
+const { task,
+        series,
+        parallel,
+        src,
+        dest,
+        watch }    = require('gulp'),
+      sass         = require('gulp-sass'),
+      autoprefixer = require('gulp-autoprefixer'),
+      gcmq         = require('gulp-group-css-media-queries'),
+      sourcemaps   = require('gulp-sourcemaps'),
+      notify       = require('gulp-notify'),
+      gutil        = require('gulp-util'),
+      ftp          = require('vinyl-ftp'),
+      cleanCSS     = require('gulp-clean-css'),
+      rename       = require('gulp-rename'),
+      uglify       = require('gulp-uglify'),
+      concat       = require('gulp-concat'),
+      del          = require('del'),
+      csscomb      = require('gulp-csscomb'),
+      changed      = require('gulp-changed'),
+      gulpif       = require('gulp-if'),
+      browserSync  = require('browser-sync');
+
+
+const SCSS = './assets/scss',
+      CSS  = './assets/css',
+      HTML = '.',
+      PHP  = './php',
+      JS   = './assets/js',
+      TEMP = './temp';
 
 const path = {
-  scssFolder:     './assets/scss/',
-  scssFiles:      './assets/scss/**/*.scss',
-  scssTempFolder: './temp/scss/',
-  scssTempFiles:  './temp/scss/**/*.scss',
-  cssFolder:      './assets/css/',
-  cssFiles:       './assets/css/**/*.css',
-  jsFiles:        './assets/js/**/*.js',
-  phpFiles:       './theme/**/*.php',
-  htmlFiles:      './*.html',
-  distFolder:     './dist/',
-  tempFolder:     './temp/',
-  uploadFolder:   './upload/'
+        scss: {
+          folder: SCSS + '/',
+          files: SCSS + '/**/*.scss',
+          combFolder: SCSS + '-comb/',
+          combFiles: SCSS + '-comb/**/*.scss',
+        },
+        css: {
+          folder: CSS + '/',
+          files: CSS + '/**/*.css',
+          filesMin: CSS + '/**/*.min.css',
+          mapFolder: CSS + '/',
+          mapFiles: CSS + '/**/*.map',
+        },
+        html: {
+          folder: HTML + '/',
+          files: HTML + '/**/*.html',
+        },
+        php: {
+          folder: PHP + '/',
+          files: PHP + '/**/*.php',
+        },
+        js: {
+          folder: JS + '/',
+          files: JS + '/**/*.js',
+          filesMin: JS + '/**/*.min.js',
+        },
+        tmp: {
+          dist: TEMP + '/dist/',
+          temp: TEMP + '/temp/',
+          upld: TEMP + '/upload/'
+        }
 };
 
+function comb () {
+  return src(path.scss.files)
+    .pipe(csscomb('.csscomb.json')
+      .on("error", notify.onError(function (error) {
+        return "File: " + error.message;
+      })))
+    .pipe(dest(path.scss.combFolder)
+      .on('end', () => { if (true) console.log('   ---------------   completed COMB'); }));
+}
 
-gulp.task('comb', function () {
-  return gulp.src([path.scssFiles, '!' + path.scssFolder + '**/_smart-grid.scss'])
-    .pipe(csscomb('.csscomb.json').on("error", notify.onError(function (error) {
-      return "File: " + error.message;
-    })))
-    .pipe(gulp.dest(path.scssFolder));
-});
+function combUpdate () {
+  return src(path.scss.combFiles)
+    .pipe(dest(path.scss.folder)
+      .on('end', () => { if (true) console.log('   ---------------   updated COMB -> SCSS')}));
+}
 
+function combDelete () {
+  return del(path.scss.combFolder, {force: true})
+    .then(() => console.log('   ---------------   temp folder scss-comb deleted'));
+}
 
-gulp.task('sass', function () {
-  return gulp.src(path.scssFiles)
+function scss () {
+  return src(path.scss.combFiles)
     .pipe(sourcemaps.init())
-    .pipe(sass().on("error", notify.onError(function (error) {
+    .pipe(csscomb('.csscomb.json')
+      .on("error", notify.onError(function (error) {
+        return "File: " + error.message;
+      })))
+    .pipe(sass()
+      .on("error", notify.onError(function (error) {
         return "File: " + error.message;
       })))
     .pipe(gcmq())
-    .pipe(autoprefixer({
-            browsers: ['last 5 versions', '> 1%'],
-            cascade: true
-        }))
-    .pipe(notify({
-      message: 'Compiled!',
-      sound: false
-    }))
+    .pipe(autoprefixer({ browsers: ['last 5 versions', '> 1%'], cascade: true }))
+    .pipe(notify({ message: 'Compiled!', sound: false }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(path.cssFolder))
+    .pipe(dest(path.css.folder)
+      .on('end', () => { if(true) console.log('   ---------------   completed SCSS'); } ))
     .pipe(browserSync.reload({stream: true}));
-});
+}
 
+function mincss () {
+  return src([path.css.files,
+    '!' + path.css.filesMin
+  ])
+    .pipe(cleanCSS({ specialComments: 'false' }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(path.css.folder)
+      .on('end', () => { if(true) console.log('   ---------------   completed MINIFY (.min.css)'); }));
+}
 
-gulp.task('compile', function (callback) {
-  runSequence('comb', 'sass', callback);
-});
+function minjs () {
+  return src([path.js.files, '!' + path.js.filesMin])
+    .pipe(uglify({
+      toplevel: true,
+    }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(path.js.folder)
+      .on('end', () => { if(true) console.log('   ---------------   completed UGLIFY (.min.js)'); }));
+}
 
+function concatjs () {
+  return src([
+    path.js.folder + 'highslide/highslide-full.min.js',
+    path.js.folder + 'highslide/highslide.config.min.js',
+    path.js.folder + 'highslide/highslide.init.min.js'
+  ])
+    .pipe(concat('highslide.min.js'))
+    .pipe(dest(path.js.folder)
+      .on('end', () => { if(true) console.log('   ---------------   completed successfully   ---   CONCAT'); }));
+}
 
-gulp.task('browser-sync', function () {
-      browserSync({
-            server: {
-                baseDir: './'
-            },
-            notify: false
-      })
-});
+async function sync () {
+  browserSync.reload();
+}
 
+function watchFiles() {
+  browserSync({
+    server: {
+      baseDir: './'
+    },
+    notify: false
+  });
 
-gulp.task('watch', ['browser-sync', 'compile'], function () {
-      gulp.watch(path.scssFiles, ['compile']);
-      gulp.watch(path.htmlFiles, browserSync.reload);
-      gulp.watch(path.jsFiles, browserSync.reload);
-      gulp.watch(path.cssFiles, browserSync.reload);
-});
+  watch(path.scss.files, series(comb, scss, mincss, combDelete));
+  watch([path.js.files, '!' + path.js.filesMin], series(minjs, sync));
+  watch(path.html.files, sync);
+}
+
+task('watch', watchFiles);
+task('updateSCSS', series(comb, combUpdate, combDelete));
