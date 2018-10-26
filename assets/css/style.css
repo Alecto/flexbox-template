@@ -580,6 +580,10 @@ p {
   line-height: 2em;
 }
 
+.widget p:last-child {
+  margin-bottom: 0;
+}
+
 .img-responsive {
   display: block;
   width: 100%;
@@ -912,6 +916,7 @@ p {
 }
 
 .widget-category__list {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
