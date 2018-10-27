@@ -35,8 +35,6 @@ const path = {
         scss: {
           folder: SCSS + '/',
           files: SCSS + '/**/*.scss',
-          combFolder: SCSS + '-comb/',
-          combFiles: SCSS + '-comb/**/*.scss',
         },
         css: {
           folder: CSS + '/',
@@ -71,23 +69,12 @@ function comb () {
       .on("error", notify.onError(function (error) {
         return "File: " + error.message;
       })))
-    .pipe(dest(path.scss.combFolder)
+    .pipe(dest(path.scss.folder)
       .on('end', () => { if (true) console.log('   ---------------   completed COMB'); }));
 }
 
-function combUpdate () {
-  return src(path.scss.combFiles)
-    .pipe(dest(path.scss.folder)
-      .on('end', () => { if (true) console.log('   ---------------   updated COMB -> SCSS')}));
-}
-
-function combDelete () {
-  return del(path.scss.combFolder, {force: true})
-    .then(() => console.log('   ---------------   temp folder scss-comb deleted'));
-}
-
 function scss () {
-  return src(path.scss.combFiles)
+  return src(path.scss.files)
     .pipe(sourcemaps.init())
     .pipe(csscomb('.csscomb.json')
       .on("error", notify.onError(function (error) {
@@ -149,10 +136,10 @@ function watchFiles() {
     notify: false
   });
 
-  watch(path.scss.files, series(comb, scss, mincss, combDelete));
+  watch(path.scss.files, series(scss, mincss));
   watch([path.js.files, '!' + path.js.filesMin], series(minjs, sync));
   watch(path.html.files, sync);
 }
 
 task('watch', watchFiles);
-task('updateSCSS', series(comb, combUpdate, combDelete));
+task('combSCSSonly', comb);

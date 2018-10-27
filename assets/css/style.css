@@ -907,6 +907,10 @@ p {
   color: #cccccc;
 }
 
+.widget-search input:-ms-input-placeholder {
+  color: #cccccc;
+}
+
 .widget-search input::-ms-input-placeholder {
   color: #cccccc;
 }
