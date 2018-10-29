@@ -66,8 +66,8 @@ const path = {
 function comb () {
   return src(path.scss.files)
     .pipe(csscomb('.csscomb.json')
-      .on("error", notify.onError(function (error) {
-        return "File: " + error.message;
+      .on('error', notify.onError(function (error) {
+        return 'File: ' + error.message;
       })))
     .pipe(dest(path.scss.folder)
       .on('end', () => { if (true) console.log('   ---------------   completed COMB'); }));
@@ -77,12 +77,12 @@ function scss () {
   return src(path.scss.files)
     .pipe(sourcemaps.init())
     .pipe(csscomb('.csscomb.json')
-      .on("error", notify.onError(function (error) {
-        return "File: " + error.message;
+      .on('error', notify.onError(function (error) {
+        return 'File: ' + error.message;
       })))
     .pipe(sass()
-      .on("error", notify.onError(function (error) {
-        return "File: " + error.message;
+      .on('error', notify.onError(function (error) {
+        return 'File: ' + error.message;
       })))
     .pipe(gcmq())
     .pipe(autoprefixer({ browsers: ['last 5 versions', '> 1%'], cascade: true }))
@@ -107,6 +107,7 @@ function minjs () {
   return src([path.js.files, '!' + path.js.filesMin])
     .pipe(uglify({
       toplevel: true,
+      output: { quote_style: 3 }
     }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(path.js.folder)
