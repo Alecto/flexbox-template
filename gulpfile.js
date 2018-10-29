@@ -107,6 +107,7 @@ function minjs () {
   return src([path.js.files, '!' + path.js.filesMin])
     .pipe(uglify({
       toplevel: true,
+      output: { quote_style: 3 }
     }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(path.js.folder)
