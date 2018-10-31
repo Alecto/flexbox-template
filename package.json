@@ -2,7 +2,7 @@
   "name": "flexbox-template",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Alecto/flexbox-template",
+  "repository": "https://github.com/Alecto/flexbox-template.git",
   "author": "Alecto <fomenkoandrey@inbox.ru>",
   "license": "MIT",
   "devDependencies": {
