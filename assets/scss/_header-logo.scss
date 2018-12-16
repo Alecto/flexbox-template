@@ -1,71 +1,71 @@
 
 .header-logo {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  align-items: center;
-
-  @media (min-width: $small + 1) {
-    padding: $gutter + $gutter / 2 $gutter / 2;
-  }
-
-  @media (max-width: $small) {
-    padding: $gutter / 2 $gutter / 2;
-  }
-
-  &__image {
-    display: block;
-
-    width: 100%;
+    align-items: center;
 
     @media (min-width: $small + 1) {
-      max-width: 400px;
-      margin-bottom: $gutter;
+        padding: $gutter + $gutter / 2 $gutter / 2;
     }
 
     @media (max-width: $small) {
-      max-width: 250px;
-      margin-bottom: $gutter / 2;
-    }
-  }
-
-  &__title {
-    display: block;
-
-    margin-bottom: 15px;
-
-    text-align: center;
-    letter-spacing: 5px;
-
-    color: #eeeeee;
-
-    font-family: $accent-font;
-    font-weight: 300;
-
-    @media (min-width: $small + 1) {
-      font-size: 3rem;
-      line-height: 3.5rem;
+        padding: $gutter / 2 $gutter / 2;
     }
 
-    @media (max-width: $small) and (min-width: $xsmall + 1) {
-      font-size: 2rem;
-      line-height: 2.5rem;
+    &__image {
+        display: block;
+
+        width: 100%;
+
+        @media (min-width: $small + 1) {
+            max-width: 400px;
+            margin-bottom: $gutter;
+        }
+
+        @media (max-width: $small) {
+            max-width: 250px;
+            margin-bottom: $gutter / 2;
+        }
     }
 
-    @media (max-width: $xsmall) {
-      font-size: 1.5rem;
-      line-height: 2rem;
+    &__title {
+        display: block;
+
+        margin-bottom: 15px;
+
+        text-align: center;
+        letter-spacing: 5px;
+
+        color: #eeeeee;
+
+        font-family: $accent-font;
+        font-weight: 300;
+
+        @media (min-width: $small + 1) {
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+
+        @media (max-width: $small) and (min-width: $xsmall + 1) {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+
+        @media (max-width: $xsmall) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
     }
-  }
 
-  &__description {
-    display: block;
+    &__description {
+        display: block;
 
-    text-align: center;
-    letter-spacing: 3px;
+        text-align: center;
+        letter-spacing: 3px;
 
-    color: #eeeeee;
+        color: #eeeeee;
 
-    font-weight: 700;
-  }
-}
+        font-weight: 700;
+    }
+}

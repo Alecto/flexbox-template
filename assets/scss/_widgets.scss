@@ -1,136 +1,136 @@
 .widget-search {
-  form {
-    position: relative;
+    form {
+        position: relative;
 
-    margin: 15px 0 7px;
-  }
-
-  .fa-search {
-    position: absolute;
-
-    margin-top: 1px;
-    padding: 7px 9px;
-
-    color: #eeeeee;
-    border-right: 1px solid rgba(#ffffff, 0.1);
-  }
-
-  input {
-    width: 100%;
-    padding: 7px 8px 7px 40px;
-
-    text-overflow: ellipsis;
-
-    color: #cccccc;
-    border: 1px solid rgba(#ffffff, 0.15);
-    border-radius: 4px;
-    background-color: rgba(#ffffff, 0.1);
-
-    font-size: 12px;
-
-    &:focus {
-      color: #ffffff;
-      border: 1px solid rgba(#ffffff, 0.3);
-      outline: none;
-      background-color: rgba(#ffffff, 0.2);
+        margin: 15px 0 7px;
     }
 
-    &::placeholder {
-      color: #cccccc;
+    .fa-search {
+        position: absolute;
+
+        margin-top: 1px;
+        padding: 7px 9px;
+
+        color: #eeeeee;
+        border-right: 1px solid rgba(#ffffff, 0.1);
     }
-  }
+
+    input {
+        width: 100%;
+        padding: 7px 8px 7px 40px;
+
+        text-overflow: ellipsis;
+
+        color: #cccccc;
+        border: 1px solid rgba(#ffffff, 0.15);
+        border-radius: 4px;
+        background-color: rgba(#ffffff, 0.1);
+
+        font-size: 12px;
+
+        &:focus {
+            color: #ffffff;
+            border: 1px solid rgba(#ffffff, 0.3);
+            outline: none;
+            background-color: rgba(#ffffff, 0.2);
+        }
+
+        &::placeholder {
+            color: #cccccc;
+        }
+    }
 }
 
 .widget-category__list {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 
-  list-style: none;
+    list-style: none;
 
-  &-item {
-    a {
-      display: block;
+    &-item {
+        a {
+            display: block;
 
-      padding: 5px 0;
+            padding: 5px 0;
 
-      transition: padding-left 0.5s;
+            transition: padding-left 0.5s;
 
-      border-radius: 4px;
+            border-radius: 4px;
 
-      &:hover {
-        padding-left: 10px;
+            &:hover {
+                padding-left: 10px;
 
-        color: $main-color;
-        background-color: rgba(#000000, 0.5);
+                color: $main-color;
+                background-color: rgba(#000000, 0.5);
 
-        @include text-shadow;
-      }
+                @include text-shadow;
+            }
+        }
     }
-  }
 }
 
 .widget-news {
-  &__item {
-    &-wrapper {
-      display: flex;
+    &__item {
+        &-wrapper {
+            display: flex;
 
-      margin: 0 (-$gutter / 2) ($gutter / 4); /* компенсация padding для фонового ховера */
-      padding: 0 ($gutter / 2) ($gutter / 4); /* для фонового ховера от краев блока */
+            margin: 0 (-$gutter / 2) ($gutter / 4); /* компенсация padding для фонового ховера */
+            padding: 0 ($gutter / 2) ($gutter / 4); /* для фонового ховера от краев блока */
 
-      flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        &-title {
+            margin: 0 0 10px;
+
+            transition: color 0.5s;
+            letter-spacing: 1px;
+
+            font-weight: 300;
+
+            @include text-shortener;
+        }
+
+        &-image {
+            overflow: hidden;
+
+            width: 75px;
+            height: 75px;
+
+            border-radius: 4px;
+
+            img {
+                transition: transform 0.5s;
+            }
+        }
+
+        &-excerpt {
+            width: calc(100% - 75px);
+            padding-left: 10px;
+
+            transition: color 0.5s;
+
+            color: #cccccc;
+
+            @include block-with-text;
+        }
+
+        a:hover {
+            h4 {
+                @include text-shadow;
+            }
+
+            img {
+                transform: scale(1.2);
+            }
+
+            .widget-news__item-excerpt {
+                color: #ffffff;
+            }
+
+            .widget-news__item-wrapper {
+                background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+            }
+        }
     }
-
-    &-title {
-      margin: 0 0 10px;
-
-      transition: color 0.5s;
-      letter-spacing: 1px;
-
-      font-weight: 300;
-
-      @include text-shortener;
-    }
-
-    &-image {
-      overflow: hidden;
-
-      width: 75px;
-      height: 75px;
-
-      border-radius: 4px;
-
-      img {
-        transition: transform 0.5s;
-      }
-    }
-
-    &-excerpt {
-      width: calc(100% - 75px);
-      padding-left: 10px;
-
-      transition: color 0.5s;
-
-      color: #cccccc;
-
-      @include block-with-text;
-    }
-
-    a:hover {
-      h4 {
-        @include text-shadow;
-      }
-
-      img {
-        transform: scale(1.2);
-      }
-
-      .widget-news__item-excerpt {
-        color: #ffffff;
-      }
-
-      .widget-news__item-wrapper {
-        background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
-      }
-    }
-  }
-}
+}

@@ -1,42 +1,42 @@
 
 @mixin text-shortener {
-  display: block;
-  overflow: hidden;
+    display: block;
+    overflow: hidden;
 
-  width: 100%;
+    width: 100%;
 
-  white-space: nowrap;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 @mixin bg-color($a: 0, $rgb: 0) {
-  background: rgba($rgb, $rgb, $rgb, $a);
+    background: rgba($rgb, $rgb, $rgb, $a);
 }
 
 @mixin block-header {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 
-  letter-spacing: 1.5px;
+    letter-spacing: 1.5px;
 
-  border-bottom: 1px solid #333333;
+    border-bottom: 1px solid #333333;
 
-  font-family: $accent-font;
-  font-weight: 300;
+    font-family: $accent-font;
+    font-weight: 300;
 }
 
 @mixin block-with-text {
-  display: -webkit-box;
-  overflow: hidden;
+    display: -webkit-box;
+    overflow: hidden;
 
-  max-height: 75px;
+    max-height: 75px;
 
-  font-size: 13px;
-  line-height: 19px;
+    font-size: 13px;
+    line-height: 19px;
 
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
 }
 
 @mixin text-shadow {
-  text-shadow: 1px 1px 3px #000000, 1px 1px 10px #000000;
-}
+    text-shadow: 1px 1px 3px #000000, 1px 1px 10px #000000;
+}

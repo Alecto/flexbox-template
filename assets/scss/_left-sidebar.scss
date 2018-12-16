@@ -1,24 +1,24 @@
 
 .left-sidebar {
-  @media (min-width: $middle + 1) {
-    flex: 0 0 $left-sidebar-width;
+    @media (min-width: $middle + 1) {
+        flex: 0 0 $left-sidebar-width;
 
-    margin-bottom: $gutter / 2;
+        margin-bottom: $gutter / 2;
 
-    order: 1;
-  }
+        order: 1;
+    }
 
-  @media (max-width: $middle) and (min-width: $xsmall + 1) {
-    width: 50%;
-    padding-right: $gutter / 4;
+    @media (max-width: $middle) and (min-width: $xsmall + 1) {
+        width: 50%;
+        padding-right: $gutter / 4;
 
-    order: 2;
-  }
+        order: 2;
+    }
 
-  @media (max-width: $xsmall) {
-    width: 100%;
-    margin-bottom: 0;
+    @media (max-width: $xsmall) {
+        width: 100%;
+        margin-bottom: 0;
 
-    order: 2;
-  }
-}
+        order: 2;
+    }
+}

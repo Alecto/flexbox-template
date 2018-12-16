@@ -1,90 +1,90 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-family: "RobotoRegular", Arial, sans-serif;
-  font-family: $main-font;
-  font-size: 14px;
-  line-height: 1.5em;
+    font-family: "RobotoRegular", Arial, sans-serif;
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 1.5em;
 }
 
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 
-  width: 100%;
-  max-width: $global-width;
-  margin: 0 auto;
+    width: 100%;
+    max-width: $global-width;
+    margin: 0 auto;
 
-  transition: opacity 1s ease 0s;
+    transition: opacity 1s ease 0s;
 
-  opacity: 1;
-  background-color: #d8b036;
-  background-image: url("../img/global-bg.jpg");
-  background-attachment: fixed;
-  background-position: top center;
-  background-size: cover;
+    opacity: 1;
+    background-color: #d8b036;
+    background-image: url("../img/global-bg.jpg");
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
 
-  @media (min-width: $large + 1) {
-    padding: 0 $gutter;
-  }
+    @media (min-width: $large + 1) {
+        padding: 0 $gutter;
+    }
 
-  @media (max-width: $large) {
-    padding: 0 $gutter / 2;
-  }
+    @media (max-width: $large) {
+        padding: 0 $gutter / 2;
+    }
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 
-  color: #eeeeee;
+    color: #eeeeee;
 
-  &:hover,
-  &:focus {
-    color: $main-color;
-  }
+    &:hover,
+    &:focus {
+        color: $main-color;
+    }
 }
 
 p {
-  color: #cccccc;
+    color: #cccccc;
 }
 
 .container {
-  display: flex;
+    display: flex;
 
-  @media (max-width: $large) {
-    flex-wrap: wrap;
-  }
+    @media (max-width: $large) {
+        flex-wrap: wrap;
+    }
 }
 
 .widget {
-  margin: 0 0 ($gutter / 2);
-  padding: $gutter / 2;
+    margin: 0 0 ($gutter / 2);
+    padding: $gutter / 2;
 
-  color: #eeeeee;
-  border-radius: 7px;
-  background-color: rgba(0, 0, 0, 0.5);
+    color: #eeeeee;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.5);
 
 
-  h3 {
-    margin-top: 5px;
+    h3 {
+        margin-top: 5px;
 
-    @include block-header;
-  }
-
-  p {
-    line-height: 2em;
-
-    &:last-child {
-      margin-bottom: 0;
+        @include block-header;
     }
-  }
+
+    p {
+        line-height: 2em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .img-responsive {
-  display: block;
+    display: block;
 
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
