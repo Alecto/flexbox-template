@@ -27,11 +27,11 @@
 
         letter-spacing: 3px;
 
-        color: #eeeeee;
+        color: $light-color;
         border-radius: 7px;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(to right, rgba($dark-color, 0.8) 0%, rgba($dark-color, 0.5) 90%, rgba($dark-color, 0) 100%);
 
-        font-family: $accent-font;
+        font-family: $header-font;
         font-weight: 300;
         line-height: 1.5em;
 
@@ -54,7 +54,7 @@
     letter-spacing: 2px;
 
     border-radius: 7px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(to right, rgba($dark-color, 0) 0%, rgba($dark-color, 0.8) 100%);
 
     a {
         font-weight: bold;
@@ -68,11 +68,11 @@
 
         margin-right: 7px;
 
-        color: #cccccc;
+        color: $gray-color;
     }
 
     i {
-        color: #cccccc;
+        color: $gray-color;
 
         font-weight: bold;
     }
@@ -108,14 +108,14 @@
         .main-item__excerpt {
             top: 30px;
 
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.75);
+            color: $light-color;
+            @include bg-color(0.75);
         }
 
         h3 {
             color: $main-color;
-            background-color: rgba(0, 0, 0, 0.75);
 
+            @include bg-color(0.75);
             @include text-shadow;
         }
     }
@@ -134,9 +134,9 @@
         text-align: center;
         letter-spacing: 1px;
 
-        color: #ffffff;
-        background-color: rgba(#000000, 0.5);
-        text-shadow: 0 0 5px #000000;
+        color: $light-color;
+        background-color: rgba($dark-color, 0.5);
+        text-shadow: 0 0 5px $dark-color;
 
         font-size: 14px;
         font-weight: 300;
@@ -150,9 +150,8 @@
 
         overflow: hidden;
 
-        border: 5px solid rgba(0, 0, 0, 0.3);
+        border: 5px solid rgba($dark-color, 0.5);
         border-radius: 7px;
-        background-color: rgba(0, 0, 0, 0.3);
     }
 
     &__excerpt {
@@ -167,7 +166,5 @@
 
         transition: top 0.5s ease-out, background-color 0.5s ease-out;
         text-align: center;
-
-        background-color: rgba(0, 0, 0, 0.5);
     }
-}
+}

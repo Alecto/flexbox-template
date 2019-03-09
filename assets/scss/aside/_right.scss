@@ -1,5 +1,5 @@
 
-.right-sidebar {
+.right {
     order: 3;
 
     @media (min-width: $large + 1) {
@@ -24,4 +24,4 @@
     @media (max-width: $xsmall) {
         width: 100%;
     }
-}
+}

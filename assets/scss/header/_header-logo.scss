@@ -37,9 +37,9 @@
         text-align: center;
         letter-spacing: 5px;
 
-        color: #eeeeee;
+        color: $light-color;
 
-        font-family: $accent-font;
+        font-family: $header-font;
         font-weight: 300;
 
         @media (min-width: $small + 1) {
@@ -64,8 +64,8 @@
         text-align: center;
         letter-spacing: 3px;
 
-        color: #eeeeee;
+        color: $light-color;
 
         font-weight: 700;
     }
-}
+}

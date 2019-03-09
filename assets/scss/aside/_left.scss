@@ -1,5 +1,5 @@
 
-.left-sidebar {
+.left {
     @media (min-width: $middle + 1) {
         flex: 0 0 $left-sidebar-width;
 
@@ -21,4 +21,4 @@
 
         order: 2;
     }
-}
+}

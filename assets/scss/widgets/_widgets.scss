@@ -1,0 +1,25 @@
+
+.widget {
+    margin: 0 0 ($gutter / 2);
+    padding: $gutter / 2;
+
+    color: $light-color;
+    border-radius: 7px;
+
+    @include bg-color;
+
+
+    h3 {
+        margin-top: 5px;
+
+        @include block-header;
+    }
+
+    p {
+        line-height: 2em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
