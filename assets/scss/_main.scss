@@ -109,6 +109,7 @@
             top: 30px;
 
             color: $light-color;
+
             @include bg-color(0.75);
         }
 
@@ -167,4 +168,4 @@
         transition: top 0.5s ease-out, background-color 0.5s ease-out;
         text-align: center;
     }
-}
+}
