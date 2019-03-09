@@ -39,7 +39,7 @@
 
         color: $light-color;
 
-        font-family: $header-font;
+        font-family: $font-header;
         font-weight: 300;
 
         @media (min-width: $small + 1) {
@@ -68,4 +68,4 @@
 
         font-weight: 700;
     }
-}
+}

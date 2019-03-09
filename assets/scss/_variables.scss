@@ -10,8 +10,8 @@ $right-sidebar-width: 240px;
 
 $gutter: 30px;
 
-$header-font: "Lora", serif;
-$base-font: "Roboto", sans-serif;
+$font-main: "Roboto", sans-serif;
+$font-header: "Lora", serif;
 
 @media (min-width: $large + 1) {
     // > 1200
