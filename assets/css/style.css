@@ -795,7 +795,7 @@ p {
     text-shadow: 1px 1px 3px #000000, 1px 1px 10px #000000;
 }
 
-.main-item h3 {
+.main-item__title {
     position: absolute;
     top: 0;
     left: 0;
@@ -828,7 +828,7 @@ p {
     -o-text-overflow: ellipsis;
 }
 
-.main-item__image {
+.main-item__wrapper {
     position: relative;
 
     overflow: hidden;
