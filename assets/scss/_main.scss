@@ -20,29 +20,6 @@
     @media (max-width: $middle) {
         order: 1;
     }
-
-    h1 {
-        margin: $gutter 0;
-        padding: 8px 12px;
-
-        letter-spacing: 3px;
-
-        color: $light-color;
-        border-radius: 7px;
-        background: linear-gradient(to right, rgba($dark-color, 0.8) 0%, rgba($dark-color, 0.5) 90%, rgba($dark-color, 0) 100%);
-
-        font-family: $font-header;
-        font-weight: 300;
-        line-height: 1.5em;
-
-        @media (min-width: $small + 1) {
-            font-size: 2rem;
-        }
-
-        @media (max-width: $small) {
-            font-size: 1.5rem;
-        }
-    }
 }
 
 .main-breadcrumb {
@@ -78,18 +55,43 @@
     }
 }
 
-.main-content__body {
-    display: flex;
+.main-content {
+    &__title {
+        margin: $gutter 0;
+        padding: 8px 12px;
 
-    margin-top: -$gutter / 4;
-    margin-right: -$gutter / 4;
-    margin-bottom: $gutter - $gutter / 4;
-    margin-left: -$gutter / 4;
+        letter-spacing: 3px;
 
-    flex-wrap: wrap;
+        color: $light-color;
+        border-radius: 7px;
+        background: linear-gradient(to right, rgba($dark-color, 0.8) 0%, rgba($dark-color, 0.5) 90%, rgba($dark-color, 0) 100%);
+
+        font-family: $font-header;
+        font-weight: 300;
+        line-height: 1.5em;
+
+        @media (min-width: $small + 1) {
+            font-size: 2rem;
+        }
+
+        @media (max-width: $small) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__body {
+        display: flex;
+
+        margin-top: -$gutter / 4;
+        margin-right: -$gutter / 4;
+        margin-bottom: $gutter - $gutter / 4;
+        margin-left: -$gutter / 4;
+
+        flex-wrap: wrap;
+    }
 }
 
-.main-item {
+.main-content-item {
     padding: $gutter / 4;
 
     @media (min-width: $small + 1) {
@@ -105,7 +107,7 @@
     }
 
     &:hover {
-        .main-item__excerpt {
+        .main-content-item__excerpt {
             top: 30px;
 
             color: $light-color;
