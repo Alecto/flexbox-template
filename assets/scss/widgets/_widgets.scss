@@ -1,9 +1,9 @@
 
 .widget {
-  margin: 0 0 ($gutter / 2);
-  padding: $gutter / 2;
+  margin: 0 0 ($gap / 2);
+  padding: $gap / 2;
 
-  color: $light-color;
+  color: $color-light;
   border-radius: 7px;
 
   @include bg-color;

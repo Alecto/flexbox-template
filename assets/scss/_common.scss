@@ -12,46 +12,46 @@ body {
   overflow-x: hidden;
 
   width: 100%;
-  max-width: $xlarge;
+  max-width: $xl;
   margin: 0 auto;
 
   transition: opacity 1s ease 0s;
 
   opacity: 1;
-  background-color: $bg-color;
+  background-color: $color-warning;
   background-image: url("../img/global-bg.jpg");
   background-attachment: fixed;
   background-position: top center;
   background-size: cover;
 
-  @media (min-width: $large + 1) {
-    padding: 0 $gutter;
+  @media (min-width: $lg + 1) {
+    padding: 0 $gap;
   }
 
-  @media (max-width: $large) {
-    padding: 0 $gutter / 2;
+  @media (max-width: $lg) {
+    padding: 0 $gap / 2;
   }
 }
 
 a {
   text-decoration: none;
 
-  color: $light-color;
+  color: $color-light;
 
   &:hover,
   &:focus {
-    color: $main-color;
+    color: $color-accent;
   }
 }
 
 p {
-  color: $gray-color;
+  color: $color-gray;
 }
 
 .container {
   display: flex;
 
-  @media (max-width: $large) {
+  @media (max-width: $lg) {
     flex-wrap: wrap;
   }
 }

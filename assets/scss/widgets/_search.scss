@@ -11,24 +11,24 @@
 
     text-overflow: ellipsis;
 
-    color: $gray-color;
-    border: 1px solid rgba($light-color, 0.15);
+    color: $color-gray;
+    border: 1px solid rgba($color-light, 0.15);
     border-radius: 4px;
 
     font-size: 12px;
 
-    @include bg-color(0.1, $light-color);
+    @include bg-color(0.1, $color-light);
 
     &:focus {
-      color: $light-color;
-      border: 1px solid rgba($light-color, 0.3);
+      color: $color-light;
+      border: 1px solid rgba($color-light, 0.3);
       outline: none;
 
-      @include bg-color(0.2, $light-color);
+      @include bg-color(0.2, $color-light);
     }
 
     &::placeholder {
-      color: $gray-color;
+      color: $color-gray;
     }
   }
 
@@ -42,9 +42,9 @@
 
     cursor: pointer;
 
-    color: $light-color;
+    color: $color-light;
     border: none;
-    border-right: 1px solid rgba($light-color, 0.1);
+    border-right: 1px solid rgba($color-light, 0.1);
     background-color: transparent;
 
     &:focus {

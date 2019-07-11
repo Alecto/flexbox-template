@@ -1,24 +1,24 @@
 
 .left {
-  @media (min-width: $middle + 1) {
+  @media (min-width: $md + 1) {
     flex: 0 0 $left-sidebar-width;
 
-    margin-bottom: $gutter / 2;
+    margin-bottom: $gap / 2;
 
     order: 1;
   }
 
-  @media (max-width: $middle) and (min-width: $xsmall + 1) {
+  @media (max-width: $md) and (min-width: $xs + 1) {
     width: 50%;
-    padding-right: $gutter / 4;
+    padding-right: $gap / 4;
 
     order: 2;
   }
 
-  @media (max-width: $xsmall) {
+  @media (max-width: $xs) {
     width: 100%;
     margin-bottom: 0;
 
     order: 2;
   }
-}
+}

@@ -1,31 +1,31 @@
 
 .footer {
-  margin-bottom: $gutter;
+  margin-bottom: $gap;
 
   &-top {
     display: flex;
 
-    margin-right: -($gutter / 4);
-    margin-left: -($gutter / 4);
+    margin-right: -($gap / 4);
+    margin-left: -($gap / 4);
 
-    @media (max-width: $middle) {
+    @media (max-width: $md) {
       flex-wrap: wrap;
     }
 
     &__item {
-      padding: 0 $gutter / 4;
+      padding: 0 $gap / 4;
 
-      color: $light-color;
+      color: $color-light;
 
-      @media (min-width: $middle + 1) {
+      @media (min-width: $md + 1) {
         flex: 0 0 25%;
       }
 
-      @media (max-width: $middle) and (min-width: $xsmall + 1) {
+      @media (max-width: $md) and (min-width: $xs + 1) {
         flex: 0 0 50%;
       }
 
-      @media (max-width: $xsmall) {
+      @media (max-width: $xs) {
         width: 100%;
       }
     }
@@ -39,4 +39,4 @@
       margin: 0 auto;
     }
   }
-}
+}

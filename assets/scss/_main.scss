@@ -3,35 +3,35 @@
   flex-grow: 1;
   order: 2;
 
-  @media (min-width: $large + 1) {
+  @media (min-width: $lg + 1) {
     flex: 0 0 calc(100% - #{$left-sidebar-width} - #{$right-sidebar-width});
 
-    padding-right: $gutter;
-    padding-left: $gutter;
+    padding-right: $gap;
+    padding-left: $gap;
   }
 
-  @media (max-width: $large) and (min-width: $middle + 1) {
+  @media (max-width: $lg) and (min-width: $md + 1) {
     flex: 0 0 calc(100% - #{$left-sidebar-width});
 
     padding-right: 0;
-    padding-left: $gutter;
+    padding-left: $gap;
   }
 
-  @media (max-width: $middle) {
+  @media (max-width: $md) {
     order: 1;
   }
 }
 
 .main-breadcrumb {
   width: 100%;
-  margin-bottom: $gutter;
+  margin-bottom: $gap;
   padding: 8px 12px;
 
   text-align: right;
   letter-spacing: 2px;
 
   border-radius: 7px;
-  background: linear-gradient(to right, rgba($dark-color, 0) 0%, rgba($dark-color, 0.8) 100%);
+  background: linear-gradient(to right, rgba($color-dark, 0) 0%, rgba($color-dark, 0.8) 100%);
 
   a {
     font-weight: bold;
@@ -45,11 +45,11 @@
 
     margin-right: 7px;
 
-    color: $gray-color;
+    color: $color-gray;
   }
 
   i {
-    color: $gray-color;
+    color: $color-gray;
 
     font-weight: bold;
   }
@@ -57,24 +57,24 @@
 
 .main-content {
   &__title {
-    margin: $gutter 0;
+    margin: $gap 0;
     padding: 8px 12px;
 
     letter-spacing: 3px;
 
-    color: $light-color;
+    color: $color-light;
     border-radius: 7px;
-    background: linear-gradient(to right, rgba($dark-color, 0.8) 0%, rgba($dark-color, 0.5) 90%, rgba($dark-color, 0) 100%);
+    background: linear-gradient(to right, rgba($color-dark, 0.8) 0%, rgba($color-dark, 0.5) 90%, rgba($color-dark, 0) 100%);
 
     font-family: $font-header;
     font-weight: 300;
     line-height: 1.5em;
 
-    @media (min-width: $small + 1) {
+    @media (min-width: $sm + 1) {
       font-size: 2rem;
     }
 
-    @media (max-width: $small) {
+    @media (max-width: $sm) {
       font-size: 1.5rem;
     }
   }
@@ -82,27 +82,27 @@
   &__body {
     display: flex;
 
-    margin-top: -$gutter / 4;
-    margin-right: -$gutter / 4;
-    margin-bottom: $gutter - $gutter / 4;
-    margin-left: -$gutter / 4;
+    margin-top: -$gap / 4;
+    margin-right: -$gap / 4;
+    margin-bottom: $gap - $gap / 4;
+    margin-left: -$gap / 4;
 
     flex-wrap: wrap;
   }
 }
 
 .main-content-item {
-  padding: $gutter / 4;
+  padding: $gap / 4;
 
-  @media (min-width: $small + 1) {
+  @media (min-width: $sm + 1) {
     flex: 0 0 33.3333%;
   }
 
-  @media (max-width: $small) and (min-width: $xxsmall + 1) {
+  @media (max-width: $sm) and (min-width: $xx + 1) {
     flex: 0 0 50%;
   }
 
-  @media (max-width: $xxsmall) {
+  @media (max-width: $xx) {
     flex: 0 0 100%;
   }
 
@@ -110,13 +110,13 @@
     .main-content-item__excerpt {
       top: 30px;
 
-      color: $light-color;
+      color: $color-light;
 
       @include bg-color(0.75);
     }
 
     h3 {
-      color: $main-color;
+      color: $color-accent;
 
       @include bg-color(0.75);
       @include text-shadow;
@@ -137,9 +137,9 @@
     text-align: center;
     letter-spacing: 1px;
 
-    color: $light-color;
-    background-color: rgba($dark-color, 0.5);
-    text-shadow: 0 0 5px $dark-color;
+    color: $color-light;
+    background-color: rgba($color-dark, 0.5);
+    text-shadow: 0 0 5px $color-dark;
 
     font-size: 14px;
     font-weight: 300;
@@ -153,7 +153,7 @@
 
     overflow: hidden;
 
-    border: 5px solid rgba($dark-color, 0.5);
+    border: 5px solid rgba($color-dark, 0.5);
     border-radius: 7px;
   }
 

@@ -20,7 +20,7 @@
       &:hover {
         padding-left: 10px;
 
-        color: $main-color;
+        color: $color-accent;
 
         @include bg-color;
         @include text-shadow;
@@ -28,4 +28,4 @@
     }
   }
 }
-
+

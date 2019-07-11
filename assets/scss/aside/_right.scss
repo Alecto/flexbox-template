@@ -2,26 +2,26 @@
 .right {
   order: 3;
 
-  @media (min-width: $large + 1) {
+  @media (min-width: $lg + 1) {
     flex: 0 0 $right-sidebar-width;
 
-    margin-bottom: $gutter / 2;
+    margin-bottom: $gap / 2;
 
     .widget-news {
       width: $right-sidebar-width;
     }
   }
 
-  @media (max-width: $large) and (min-width: $middle + 1) {
+  @media (max-width: $lg) and (min-width: $md + 1) {
     width: 100%;
   }
 
-  @media (max-width: $middle) and (min-width: $xsmall + 1) {
+  @media (max-width: $md) and (min-width: $xs + 1) {
     width: 50%;
-    padding-left: $gutter / 4;
+    padding-left: $gap / 4;
   }
 
-  @media (max-width: $xsmall) {
+  @media (max-width: $xs) {
     width: 100%;
   }
-}
+}
