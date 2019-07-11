@@ -1,54 +1,54 @@
 .widget-search {
-    form {
-        position: relative;
+  form {
+    position: relative;
 
-        margin: 15px 0 7px;
+    margin: 15px 0 7px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 7px 8px 7px 40px;
+
+    text-overflow: ellipsis;
+
+    color: $gray-color;
+    border: 1px solid rgba($light-color, 0.15);
+    border-radius: 4px;
+
+    font-size: 12px;
+
+    @include bg-color(0.1, $light-color);
+
+    &:focus {
+      color: $light-color;
+      border: 1px solid rgba($light-color, 0.3);
+      outline: none;
+
+      @include bg-color(0.2, $light-color);
     }
 
-    &__input {
-        width: 100%;
-        padding: 7px 8px 7px 40px;
-
-        text-overflow: ellipsis;
-
-        color: $gray-color;
-        border: 1px solid rgba($light-color, 0.15);
-        border-radius: 4px;
-
-        font-size: 12px;
-
-        @include bg-color(0.1, $light-color);
-
-        &:focus {
-            color: $light-color;
-            border: 1px solid rgba($light-color, 0.3);
-            outline: none;
-
-            @include bg-color(0.2, $light-color);
-        }
-
-        &::placeholder {
-            color: $gray-color;
-        }
+    &::placeholder {
+      color: $gray-color;
     }
+  }
 
-    &__submit {
-        position: absolute;
-        top: 1px;
-        bottom: 1px;
-        left: 1px;
+  &__submit {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
 
-        padding: 5px 7px;
+    padding: 5px 7px;
 
-        cursor: pointer;
+    cursor: pointer;
 
-        color: $light-color;
-        border: none;
-        border-right: 1px solid rgba($light-color, 0.1);
-        background-color: transparent;
+    color: $light-color;
+    border: none;
+    border-right: 1px solid rgba($light-color, 0.1);
+    background-color: transparent;
 
-        &:focus {
-            outline: none;
-        }
+    &:focus {
+      outline: none;
     }
+  }
 }

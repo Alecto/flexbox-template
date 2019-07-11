@@ -1,11 +1,11 @@
 
 .header {
-    overflow: hidden;
+  overflow: hidden;
 
-    min-height: 100px;
-    margin-bottom: 30px;
+  min-height: 100px;
+  margin-bottom: 30px;
 
-    border-radius: 0 0 7px 7px;
+  border-radius: 0 0 7px 7px;
 
-    @include bg-color;
+  @include bg-color;
 }

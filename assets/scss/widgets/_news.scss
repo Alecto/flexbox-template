@@ -1,64 +1,64 @@
 
 .widget-news__item {
-    &-wrapper {
-        display: flex;
+  &-wrapper {
+    display: flex;
 
-        margin: 0 (-$gutter / 2) ($gutter / 4); /* компенсация padding для фонового ховера */
-        padding: 0 ($gutter / 2) ($gutter / 4); /* для фонового ховера от краев блока */
+    margin: 0 (-$gutter / 2) ($gutter / 4); /* компенсация padding для фонового ховера */
+    padding: 0 ($gutter / 2) ($gutter / 4); /* для фонового ховера от краев блока */
 
-        flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  &-title {
+    margin: 0 0 10px;
+
+    transition: color 0.5s;
+    letter-spacing: 1px;
+
+    font-weight: 300;
+
+    @include text-shortener;
+  }
+
+  &-image {
+    overflow: hidden;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 4px;
+
+    img {
+      transition: transform 0.5s;
+    }
+  }
+
+  &-excerpt {
+    width: calc(100% - 75px);
+    padding-left: 10px;
+
+    transition: color 0.5s;
+
+    color: $gray-color;
+
+    @include block-with-text;
+  }
+
+  a:hover {
+    h4 {
+      @include text-shadow;
     }
 
-    &-title {
-        margin: 0 0 10px;
-
-        transition: color 0.5s;
-        letter-spacing: 1px;
-
-        font-weight: 300;
-
-        @include text-shortener;
+    img {
+      transform: scale(1.2);
     }
 
-    &-image {
-        overflow: hidden;
-
-        width: 75px;
-        height: 75px;
-
-        border-radius: 4px;
-
-        img {
-            transition: transform 0.5s;
-        }
+    .widget-news__item-excerpt {
+      color: $light-color;
     }
 
-    &-excerpt {
-        width: calc(100% - 75px);
-        padding-left: 10px;
-
-        transition: color 0.5s;
-
-        color: $gray-color;
-
-        @include block-with-text;
+    .widget-news__item-wrapper {
+      background: radial-gradient(ellipse at center, rgba($dark-color, 0.65) 0%,rgba($dark-color, 0) 100%);
     }
-
-    a:hover {
-        h4 {
-            @include text-shadow;
-        }
-
-        img {
-            transform: scale(1.2);
-        }
-
-        .widget-news__item-excerpt {
-            color: $light-color;
-        }
-
-        .widget-news__item-wrapper {
-            background: radial-gradient(ellipse at center, rgba($dark-color, 0.65) 0%,rgba($dark-color, 0) 100%);
-        }
-    }
+  }
 }

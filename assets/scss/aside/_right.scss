@@ -1,27 +1,27 @@
 
 .right {
-    order: 3;
+  order: 3;
 
-    @media (min-width: $large + 1) {
-        flex: 0 0 $right-sidebar-width;
+  @media (min-width: $large + 1) {
+    flex: 0 0 $right-sidebar-width;
 
-        margin-bottom: $gutter / 2;
+    margin-bottom: $gutter / 2;
 
-        .widget-news {
-            width: $right-sidebar-width;
-        }
+    .widget-news {
+      width: $right-sidebar-width;
     }
+  }
 
-    @media (max-width: $large) and (min-width: $middle + 1) {
-        width: 100%;
-    }
+  @media (max-width: $large) and (min-width: $middle + 1) {
+    width: 100%;
+  }
 
-    @media (max-width: $middle) and (min-width: $xsmall + 1) {
-        width: 50%;
-        padding-left: $gutter / 4;
-    }
+  @media (max-width: $middle) and (min-width: $xsmall + 1) {
+    width: 50%;
+    padding-left: $gutter / 4;
+  }
 
-    @media (max-width: $xsmall) {
-        width: 100%;
-    }
+  @media (max-width: $xsmall) {
+    width: 100%;
+  }
 }
