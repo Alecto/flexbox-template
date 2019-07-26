@@ -1,24 +1,21 @@
-
 .left {
-  @media (min-width: $md + 1) {
+  @include md-min {
     flex: 0 0 $left-sidebar-width;
 
     margin-bottom: $gap / 2;
 
     order: 1;
   }
-
-  @media (max-width: $md) and (min-width: $xs + 1) {
+  @include md-xs {
     width: 50%;
     padding-right: $gap / 4;
 
     order: 2;
   }
-
-  @media (max-width: $xs) {
+  @include xs {
     width: 100%;
     margin-bottom: 0;
 
     order: 2;
   }
-}
+}

@@ -4,7 +4,7 @@
 
 html {
   font-family: $font-main;
-  font-size: 14px;
+  font-size: $font-size;
   line-height: 1.5em;
 }
 
@@ -24,11 +24,10 @@ body {
   background-position: top center;
   background-size: cover;
 
-  @media (min-width: $lg + 1) {
+  @include lg-min {
     padding: 0 $gap;
   }
-
-  @media (max-width: $lg) {
+  @include lg {
     padding: 0 $gap / 2;
   }
 }
@@ -51,7 +50,7 @@ p {
 .container {
   display: flex;
 
-  @media (max-width: $lg) {
+  @include lg {
     flex-wrap: wrap;
   }
 }
@@ -62,4 +61,4 @@ p {
   width: 100%;
   max-width: 100%;
   height: auto;
-}
+}

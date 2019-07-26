@@ -1,8 +1,6 @@
-
 .right {
   order: 3;
-
-  @media (min-width: $lg + 1) {
+  @include lg-min {
     flex: 0 0 $right-sidebar-width;
 
     margin-bottom: $gap / 2;
@@ -11,17 +9,14 @@
       width: $right-sidebar-width;
     }
   }
-
-  @media (max-width: $lg) and (min-width: $md + 1) {
+  @include lg-md {
     width: 100%;
   }
-
-  @media (max-width: $md) and (min-width: $xs + 1) {
+  @include md-xs {
     width: 50%;
     padding-left: $gap / 4;
   }
-
-  @media (max-width: $xs) {
+  @include xs {
     width: 100%;
   }
-}
+}
