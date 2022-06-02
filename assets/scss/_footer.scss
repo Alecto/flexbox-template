@@ -4,15 +4,15 @@
   &-top {
     display: flex;
 
-    margin-right: -($gap / 4);
-    margin-left: -($gap / 4);
+    margin-right: -$gap-xs;
+    margin-left: -$gap-xs;
 
     @include md {
       flex-wrap: wrap;
     }
 
     &__item {
-      padding: 0 $gap / 4;
+      padding: 0 $gap-xs;
 
       color: $color-light;
 
@@ -36,4 +36,4 @@
       margin: 0 auto;
     }
   }
-}
+}

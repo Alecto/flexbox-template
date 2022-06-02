@@ -1,11 +1,10 @@
 .widget-news__item {
   &-wrapper {
     display: flex;
-
-    margin: 0 (-$gap / 2) ($gap / 4); /* компенсация padding для фонового ховера */
-    padding: 0 ($gap / 2) ($gap / 4); /* для фонового ховера от краев блока */
-
     flex-wrap: wrap;
+
+    margin: 0 -$gap-sm $gap-xs; /* компенсация padding для фонового ховера */
+    padding: 0 $gap-sm $gap-xs; /* для фонового ховера от краев блока */
   }
 
   &-title {

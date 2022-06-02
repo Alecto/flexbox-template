@@ -28,7 +28,7 @@ body {
     padding: 0 $gap;
   }
   @include lg {
-    padding: 0 $gap / 2;
+    padding: 0 $gap-sm;
   }
 }
 
@@ -61,4 +61,4 @@ p {
   width: 100%;
   max-width: 100%;
   height: auto;
-}
+}

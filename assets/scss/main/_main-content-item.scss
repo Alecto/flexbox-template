@@ -1,5 +1,5 @@
 .main-content-item {
-  padding: $gap / 4;
+  padding: $gap-xs;
 
   @include sm-min {
     flex: 0 0 33.3333%;
@@ -74,4 +74,4 @@
     transition: top 0.5s ease-out, background-color 0.5s ease-out;
     text-align: center;
   }
-}
+}

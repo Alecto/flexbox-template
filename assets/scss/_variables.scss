@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $font-main: "Roboto", sans-serif;
 $font-header: "Lora", serif;
 $font-size: 14px;
@@ -10,6 +12,9 @@ $xs: 576px;
 $xx: 480px;
 
 $gap: 30px;
+$gap-lg: $gap * 1.5;
+$gap-sm: math.div($gap, 2);
+$gap-xs: math.div($gap, 4);
 
 $left-sidebar-width: 220px;
 $right-sidebar-width: 240px;
